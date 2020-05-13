@@ -1,15 +1,17 @@
 Package: spikemap
 Type: Package
-Title: Plot Spikes on a Map
+Title: Plot Maps Made of Spikes
 Version: 0.1.0
 Authors@R: person("Timothée", "Giraud", 
         email = "timothee.giraud@cnrs.fr", role = c("cre","aut"), 
         comment = c(ORCID = "0000-0002-1932-3323"))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: It is possible to map quantities with circles, squares or other 
+    simple geometric symbols, spikemap uses spikes.  
 Imports: 
     graphics, 
     sf
+Suggests: 
+    cartography
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

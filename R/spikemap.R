@@ -96,9 +96,9 @@ spikemap <- function(x, var,
 #' com <- st_read(system.file("gpkg/com.gpkg", package="spikemap"))
 #' plot(st_geometry(com))
 #' spikemap(x = com, var = "pop")
-#' tips <- spikepoint(x = com, var = "pop")
+#' tips <- spikelabel(x = com, var = "pop")
 #' plot(st_geometry(tips), add = TRUE)
-spikepoint <- function(x, var, inches = 3, fixmax){
+spikelabel <- function(x, var, inches = 3, fixmax){
   pt <- spike(x = x, var = var, inches = inches, fixmax = fixmax)
   pt[[2]] <- pt[[2]] + pt[[4]]
   pts <- st_as_sf(cbind(st_set_geometry(x, NULL), pt[,1:2]),
@@ -146,8 +146,8 @@ spikelegend <- function(x, inches = 3, width = .02, fixmax, col, border, lwd,
                         pos, title.txt, title.cex, values.cex, values.rnd){
 
   # figdim in geo coordinates
-  x1 <- par()$usr[1]
-  y1 <- par()$usr[3]
+  x1 <- graphics::par("usr")[1]
+  y1 <- graphics::par("usr")[3]
 
   if(length(pos) == 1){
     if(pos != "bottomleft"){
@@ -165,8 +165,8 @@ spikelegend <- function(x, inches = 3, width = .02, fixmax, col, border, lwd,
   # spike pos
   xc <- x1 + (delta * c(3, 6, 9, 12))
   yc <- rep(y1, 4) + delta * 2
-  leg <- st_as_sf(data.frame(lon = xc, lat = yc, lab = x),
-                  coords = c("lon", "lat"), crs = NA)
+  leg <- sf::st_as_sf(data.frame(lon = xc, lat = yc, lab = x),
+                      coords = c("lon", "lat"), crs = NA)
   spikemap(x = leg, var = "lab", inches = inches, width = width, fixmax = fixmax,
            lwd = lwd, col = col, border = border, add = TRUE, legend.pos = "n")
 
@@ -175,10 +175,10 @@ spikelegend <- function(x, inches = 3, width = .02, fixmax, col, border, lwd,
   }
 
   sizes <- xinch(x * inches  / fixmax)
-  text(x = xc, yc + sizes, labels = round(x, values.rnd), pos = 4,
-       offset = .2, cex = values.cex)
-  text(x = xc[1] - (xinch(width)/2), yc[1] + sizes[1] + delta * 2.5,
-       labels = title.txt, cex = title.cex, adj = c(0,0))
+  graphics::text(x = xc, yc + sizes, labels = round(x, values.rnd), pos = 4,
+                 offset = .2, cex = values.cex)
+  graphics::text(x = xc[1] - (xinch(width)/2), yc[1] + sizes[1] + delta * 2.5,
+                 labels = title.txt, cex = title.cex, adj = c(0,0))
 }
 
 

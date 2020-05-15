@@ -10,6 +10,17 @@ geometric symbols, `spikemap` uses spikes.
 ![Spike Map](img/spiky.png)
 
 
+
+## Installation
+* Development version on GitHub
+```{r}
+require(remotes)
+install_github("rCarto/spikemap")
+```
+
+
+## Demo
+
 ```r
 library(sf)
 library(spikemap)
@@ -66,4 +77,9 @@ mtext("Population \nin Occitanie",
 
 dev.off()
 ```
+
+## Inspiration
+
+Inspiration from the New York Times front page maps by Lazaro Gamio, Karen Yourish and Bill Marsh (2020/04/08 edition).  
+<img src="img/nyt.jpeg" width="33%">
 

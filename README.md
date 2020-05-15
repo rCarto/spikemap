@@ -82,7 +82,9 @@ dev.off()
 
 ## Gallery
 
-<img src="img/spikywrld.png" width="50%"><img src="img/fire.png" width="50%">  
+<img src="img/spikywrld.png" >  
+
+<img src="img/fire.png" >  
 
 
 ## Inspiration

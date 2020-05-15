@@ -77,9 +77,18 @@ mtext("Population \nin Occitanie",
 
 dev.off()
 ```
+<img src="img/spiky.png" width="50%">   
+
+
+## Gallery
+
+<img src="img/spikywrld.png" width="50%"><img src="img/fire.png" width="50%">  
+
 
 ## Inspiration
 
 Inspiration from the New York Times front page maps by Lazaro Gamio, Karen Yourish and Bill Marsh (2020/04/08 edition).  
 <img src="img/nyt.jpeg" width="33%">
+
+
 
